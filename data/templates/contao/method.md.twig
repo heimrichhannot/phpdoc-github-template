@@ -1,6 +1,5 @@
-### {{ method.name }}
-
-{{ method.summary|raw }}
+{# ### {{ method.name }}
+#}
 
 {# Method signature #}
 ```php
@@ -12,15 +11,15 @@
 {%- endfor %} )
 {{- method.response.types ? ': '~method.response.types|join('|') }}
 ```
+{{ method.summary|raw }}
 
 {{ method.description|raw }}
 
-{% if method.static %}* This method is **static**.{% endif %}
-{% if method.deprecated %}* **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
+{#{% if method.static %}* This method is **static**.{% endif %} #}
+{% if method.deprecated %} **Warning:** this method is **deprecated**. This means that this method will likely be removed in a future version.
 {% endif %}
 
 {% if method.arguments is not empty %}
-**Parameters:**
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -31,9 +30,8 @@
 {% endif %}{# method.arguments is not empty #}
 
 {% if method.response.description %}
-**Return Value:**
 
-{{ method.response.description|raw }}
+**returns** {{ method.response.description|raw }}
 
 {% endif %}
 

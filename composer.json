@@ -1,5 +1,5 @@
 {
-    "name": "cvuorinen/phpdoc-markdown-public",
+    "name": "heimrichhannot/phpdoc-github-template",
     "description": "phpDocumentor template that generates Markdown documentation of the public API",
     "keywords" : [ "PHPDoc", "phpDocumentor", "Documentation", "Markdown" ],
     "homepage" : "https://github.com/cvuorinen/phpdoc-markdown-public",

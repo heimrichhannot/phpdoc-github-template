@@ -1,0 +1,11 @@
+## Classes
+
+{% for class in project.indexes.classes|sort_asc %}
+{% if not class.abstract %}
+* {{ class.name }} - {{ class.summary|raw }}
+	{#* {{ anchorLink(class.name) }} - {{ class.summary|raw }}
+	 {% for method in publicMethods(class) %}
+		* {{ anchorLink(method.name) }}
+	{% endfor %} #}
+{% endif %}
+{% endfor %}

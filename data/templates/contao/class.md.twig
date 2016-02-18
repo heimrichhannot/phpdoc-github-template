@@ -2,14 +2,12 @@
 
 {{ class.summary|raw }}
 
-{{ class.description|raw }}
-
+{{ class.description|raw }}{#
 * Full name: {{ class.FullyQualifiedStructuralElementName }}
-{% if class.parent %}* Parent class: {{ class.parent.FullyQualifiedStructuralElementName }}
+{% if class.parent %}* Parent class: {{ class.parent }}
 {% endif %}
-{% if class.interfaces is not empty %}* This class implements: {{ class.interfaces|join(', ')|raw }}
-{% endif %}
-{% if class.deprecated %}* **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
+#}{% if class.interfaces is not empty %} This class implements: {{ class.interfaces|join(', ')|raw }}
+{% endif %}{% if class.deprecated %} **Warning:** this class is **deprecated**. This means that this class will likely be removed in a future version.
 {% endif %}
 
 {% if class.tags.see is not empty or class.tags.link is not empty %}
@@ -24,6 +22,8 @@
 
 {% endif %}{# class.tags.see || class.tags.link #}
 
+{#
 {% for method in publicMethods(class) %}
 {% include 'method.md.twig' %}
 {% endfor %}
+#}
